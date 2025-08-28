@@ -11,9 +11,32 @@ function agregarAmigo(){
         console.log(amigos)
     }
     limpiarCaja();
-    return;
+    actualizaLista();
+    return amigos;
 }
 
 function limpiarCaja() {
     document.querySelector('#amigo').value = '';
+}
+
+function sortearAmigo(){
+    let tamanoAmigos= amigos.length
+
+    if (tamanoAmigos === 0){
+        alert('Agrega a tus amigos');
+    }else{
+        let numeroGenerado= Math.floor(Math.random()*tamanoAmigos);
+        document.getElementById('resultado').innerHTML = amigos[numeroGenerado];
+    } 
+}
+
+function actualizaLista(){
+    let lista= document.getElementById('listaAmigos')
+    lista.innerHTML=""
+    for (let i = 0; i < amigos.length; i++) {
+        console.log(amigos[i]);
+        let nuevoAmigo = document.createElement('li');
+        nuevoAmigo.textContent=amigos[i];
+        lista.appendChild(nuevoItem);
+    }
 }
