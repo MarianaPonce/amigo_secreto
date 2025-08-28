@@ -8,10 +8,10 @@ function agregarAmigo(){
         alert("Por favor, inserte un nombre")
     }else{
         amigos.push(amigo);
+        actualizaLista();
         console.log(amigos)
     }
     limpiarCaja();
-    actualizaLista();
     return amigos;
 }
 
@@ -21,7 +21,6 @@ function limpiarCaja() {
 
 function sortearAmigo(){
     let tamanoAmigos= amigos.length
-
     if (tamanoAmigos === 0){
         alert('Agrega a tus amigos');
     }else{
@@ -37,6 +36,6 @@ function actualizaLista(){
         console.log(amigos[i]);
         let nuevoAmigo = document.createElement('li');
         nuevoAmigo.textContent=amigos[i];
-        lista.appendChild(nuevoItem);
+        lista.appendChild(nuevoAmigo);
     }
 }
