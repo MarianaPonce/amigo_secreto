@@ -8,10 +8,10 @@ function agregarAmigo(){
         alert("Por favor, inserte un nombre")
     }else{
         amigos.push(amigo);
-        actualizaLista();
-        console.log(amigos)
+        
     }
     limpiarCaja();
+    actualizaLista();
     return amigos;
 }
 
@@ -33,7 +33,6 @@ function actualizaLista(){
     let lista= document.getElementById('listaAmigos')
     lista.innerHTML=""
     for (let i = 0; i < amigos.length; i++) {
-        console.log(amigos[i]);
         let nuevoAmigo = document.createElement('li');
         nuevoAmigo.textContent=amigos[i];
         lista.appendChild(nuevoAmigo);
